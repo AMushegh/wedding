@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.wrapper {
+  height: inherit;
+}
+
+.bg-parallax {
+  background-image: url("../assets/images/img_parallax.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-main {
+  height: 650px;
+}
+
+.section {
+  padding: 96px 0;
+  height: 650px;
+}
+
+.section-container {
+  height: 100%;
+  margin: 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.section-title {
+  font-size: 42px;
+}
+
+.section-description {
+  padding: 32px 0;
+}
+
+.section-content {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.main-wrapper {
+  height: 100%;
+  background: rgb(100 71 27 / 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper h1 {
+  color: #ffffff;
+}
+
+.countdown {
+  display: flex;
+  gap: 64px;
+}
+
+.countdown .time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown .time h2 {
+  font-size: 72px;
+  width: 108px;
+  text-align: center;
+}
