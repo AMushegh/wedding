@@ -62,7 +62,7 @@ html {
 
 .main-wrapper {
   height: 100%;
-  background: rgb(100 71 27 / 70%);
+  /* background: rgb(100 71 27 / 70%); */
   display: flex;
   justify-content: center;
   align-items: center;
