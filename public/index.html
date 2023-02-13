@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
     <title>Document</title>
   </head>
@@ -30,71 +36,79 @@
             <div id="countdown" class="countdown">
               <div class="time">
                 <h2 id="days">00</h2>
-                <small>Days</small>
+                <small class="time-name">Days</small>
               </div>
 
               <div class="time">
                 <h2 id="hours">00</h2>
-                <small>Hours</small>
+                <small class="time-name">Hours</small>
               </div>
 
               <div class="time">
                 <h2 id="minutes">00</h2>
-                <small>Minutes</small>
+                <small class="time-name">Minutes</small>
               </div>
 
               <div class="time">
                 <h2 id="seconds">00</h2>
-                <small>Seconds</small>
+                <small class="time-name">Seconds</small>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" style="background-color: blue">
-        <div class="section-container">
-          <h3 class="section-title">Countdown</h3>
+      <section class="section">
+        <div class="section-container wedding-data">
+          <h3 class="section-title">When & Where</h3>
           <p class="section-description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-            provident officia ex voluptates, itaque, perferendis sequi id unde
-            nostrum consectetur nihil magnam alias debitis sit tempore soluta?
-            Deserunt, corrupti harum.
+            provident officia ex voluptates,
           </p>
-          <div class="section-content">testtesttesttest</div>
+          <div class="section-content wedding-info">
+            <div class="event-info">
+              <img src="./assets/images/church.png" alt="Location" />
+              <div class="info-desc">
+                <div class="event-row">
+                  <span>Date:</span>
+                  <span>23 Jun 2023</span>
+                </div>
+                <div class="event-row">
+                  <span>Time:</span>
+                  <span>10:00</span>
+                </div>
+                <div class="event-row">
+                  <span>Location:</span>
+                  <span>St. XYZ Church</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-info">
+              <img src="./assets/images/location.png" alt="Location" />
+              <div class="info-desc">
+                <div class="event-row">
+                  <span>Date:</span>
+                  <span>23 Jun 2023</span>
+                </div>
+                <div class="event-row">
+                  <span>Time:</span>
+                  <span>18:00</span>
+                </div>
+                <div class="event-row">
+                  <span>Location:</span>
+                  <span>Florence Restaurant</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-      <section class="section" style="background-color: yellow">
-        <div class="section-container">
-          <h3 class="section-title">Countdown</h3>
-          <p class="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-            provident officia ex voluptates, itaque, perferendis sequi id unde
-            nostrum consectetur nihil magnam alias debitis sit tempore soluta?
-            Deserunt, corrupti harum.
-          </p>
-          <div class="section-content">daawdfawfawgawgs</div>
-        </div>
-      </section>
-
-      <section
-        class="section section-countdown"
-        style="background-color: green"
-      >
-        <div class="section-container">
-          <h3 class="section-title">Countdown</h3>
-          <p class="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
-            provident officia ex voluptates, itaque, perferendis sequi id unde
-            nostrum consectetur nihil magnam alias debitis sit tempore soluta?
-            Deserunt, corrupti harum.
-          </p>
-          <div class="section-content">daawdfawfawgawgs</div>
-        </div>
-      </section>
+      <img
+        src="https://cdn0.weddingwire.com/vendor/702900/3_2/960/jpg/meganandanthony-married-364_51_9207-1565374757.jpeg"
+        alt="When and where"
+        class="when-where-banner"
+      />
     </div>
-
     <script src="./js/countdown.js" async></script>
   </body>
 </html>

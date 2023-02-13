@@ -2,56 +2,56 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins";
 }
-
-body,
-html {
-  height: 100%;
-}
-
-.wrapper {
-  height: inherit;
-}
-
 .bg-parallax {
-  background-image: url("../assets/images/img_parallax.jpg");
-
-  /* Full height */
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5bd1193d3560c36c4558c778/1587690283755-6KBR0EQ51WRUSX78S2O8/UtopianEvents_IndianWedding_OutdoorMandap%2C+Orlando%2C+Florida.jpg");
   height: 100%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
-
+.bg-parallax::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.main-wrapper h1 {
+  font-size: 42px;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+  color: #fff6f6;
+  z-index: 1;
+}
 .section-main {
-  height: 650px;
+  height: 350px;
 }
-
-.section {
-  padding: 96px 0;
-  height: 650px;
-}
-
 .section-container {
   height: 100%;
-  margin: 0 120px;
+  padding: 40px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
 }
-
 .section-title {
   font-size: 42px;
+  font-weight: 300;
+  color: #303030;
+  letter-spacing: 0.2em;
 }
-
 .section-description {
-  padding: 32px 0;
+  font-size: 16px;
+  max-width: 500px;
+  text-align: center;
+  color: #303030;
+  letter-spacing: 0.1em;
 }
-
 .section-content {
   display: flex;
   justify-content: center;
@@ -59,31 +59,107 @@ html {
   width: 100%;
   align-items: center;
 }
-
 .main-wrapper {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.main-wrapper h1 {
-  color: #ffffff;
-}
-
 .countdown {
+  width: 100%;
   display: flex;
-  gap: 64px;
+  justify-content: center;
+  gap: 50px;
 }
-
 .countdown .time {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .countdown .time h2 {
-  font-size: 72px;
-  width: 108px;
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-align: center;
+}
+.countdown .time-name {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #303030;
+}
+.wedding-data {
+  background: linear-gradient(#ffffff, #d4ddec);
+}
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.event-info + .event-info {
+  margin-left: 50px;
+}
+.event-info img {
+  height: 50px;
+  border: 1px solid #303030b4;
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.event-row {
+  display: flex;
+  justify-content: space-between;
+}
+.event-row + .event-row {
+  margin-top: 5px;
+}
+.event-row span {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.event-row span + span {
+  margin-left: 10px;
+  font-weight: 300;
+  text-align: end;
+}
+.when-where-banner {
+  width: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width: 768px) {
+  .countdown .time h2 {
+    font-size: 36px;
+  }
+  .event-info + .event-info {
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .countdown .time h2 {
+    font-size: 28px;
+  }
+  .countdown {
+    gap: 25px;
+  }
+  .countdown .time-name {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .section-title {
+    font-size: 28px;
+    letter-spacing: 0.1em;
+  }
+  .wedding-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-info:first-child {
+    margin-bottom: 20px;
+  }
+  .event-info + .event-info {
+    margin-left: 0;
+  }
 }
