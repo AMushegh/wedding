@@ -27,6 +27,17 @@
   letter-spacing: 0.15em;
   color: #fff6f6;
   z-index: 1;
+  padding: 0 5px;
+  text-align: center;
+}
+.main-wrapper p {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #fff6f6;
+  z-index: 1;
+  padding: 0 5px;
+  text-align: center;
 }
 .section-main {
   height: 350px;
@@ -64,6 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .countdown {
   width: 100%;
