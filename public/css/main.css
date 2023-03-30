@@ -234,4 +234,7 @@ footer {
   .event-row span {
     font-size: 13px;
   }
+  .event-row a {
+    font-size: 13px;
+  }
 }
