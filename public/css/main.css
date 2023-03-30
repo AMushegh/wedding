@@ -180,6 +180,9 @@ footer {
   .event-row span {
     font-size: 14px;
   }
+  .event-row a {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 630px) {
   .event-info + .event-info {
