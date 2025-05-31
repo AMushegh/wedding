@@ -7,7 +7,7 @@ const targetDate = new Date(`Jun 23, 2023 00:00:00`);
 
 const interval = setInterval(updateCountdown, 1000);
 
-// Update countdown time
+// Update countdown time 
 function updateCountdown() {
   const currentTime = new Date();
   const diff = targetDate - currentTime;
