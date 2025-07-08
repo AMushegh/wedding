@@ -2,6 +2,7 @@ import "./fonts.css";
 import "./style.css";
 
 import { TOOLTIP_TRIGGER_CONTENT_MAP } from "./constants";
+const documentBody = document.querySelector("body");
 
 // countdown timer start
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,6 +48,8 @@ let popupCloseButton;
 
 const closePopup = () => {
   const popup = document.querySelector(".popup-backdrop");
+  documentBody.classList.remove("scroll-lock"); // Prevent body scroll when popup is open
+
   popupCloseButton.removeEventListener("click", closePopup);
 
   if (popup) {
@@ -59,6 +62,7 @@ const openPopup = (title, locations) => {
   const popup = document.querySelector(".popup-backdrop");
 
   if (popup) {
+    documentBody.classList.add("scroll-lock"); // Prevent body scroll when popup is open
     const popupTitle = document.querySelector(".popup-title");
     const popupList = document.querySelector(".popup-list");
     popupList.innerHTML = ""; // Clear previous content

@@ -11,6 +11,9 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
+.scroll-lock {
+  overflow: hidden;
+}
 .bg-parallax {
   background-image: url("../assets/images/photo_2023-03-11_23-07-22.jpg");
   height: 100%;
@@ -279,6 +282,7 @@ footer {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: #303030;
 }
 .popup-list {
   margin-top: 10px;
