@@ -243,8 +243,15 @@ footer {
   }
 }
 .tooltipTrigger {
-  text-decoration: underline;
+  color: #303030;
+  border: 1px solid #303030;
   cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 25px;
+  transition-duration: 500ms;
+}
+.tooltipTrigger:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 .popup-backdrop {
   position: fixed;
