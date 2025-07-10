@@ -2,13 +2,24 @@ const MONASTERY_POPUP_TRIGGER_ID = "tooltipTrigger1";
 const RESTAURANT_POPUP_TRIGGER_ID = "tooltipTrigger2";
 
 export const MONASTERY_DATA = {
-  name: "Monastery",
+  name: "Saint Gayane Church",
   locations: [
     {
       name: "Yandex Navi",
       locationUrl:
-        "https://yandex.com/maps/213/moscow/?ll=37.6173%2C55.7558&z=10",
+        "https://yandex.com/navi/org/the_church_of_st_gayane/225773844967?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
       imageSrc: "./assets/images/yandex.png",
+    },
+    {
+      name: "Google Maps",
+      locationUrl: "https://maps.app.goo.gl/dWNByr5dafBhxdU1A",
+      imageSrc: "./assets/images/google-maps.png",
+    },
+    {
+      locationUrl:
+        "https://maps.apple.com/place?address=Isi%20Le%20Mulino%20street,%20Vagharshapat,%20Armenia&coordinate=40.157492,44.291787&name=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D4%B3%D5%A1%D5%B5%D5%A1%D5%B6%D5%A5%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB&place-id=I7D8B4792CC936DEA&map=explore",
+      name: "Apple Maps",
+      imageSrc: "./assets/images/apple.png",
     },
   ],
 };
