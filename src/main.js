@@ -1,7 +1,13 @@
-import "./fonts.css";
-import "./style.css";
+import Swiper from "swiper";
+import { EffectCoverflow } from "swiper/modules";
 
-import { TOOLTIP_TRIGGER_CONTENT_MAP } from "./constants";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+
+import "./styles/fonts.css";
+import "./styles/style.css";
+
+import { POPUP_TRIGGER_CONTENT_MAP } from "./constants";
 const documentBody = document.querySelector("body");
 
 // countdown timer start
@@ -109,13 +115,14 @@ tooltipTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
     const triggerId = trigger.id;
 
-    const { name, locations } = TOOLTIP_TRIGGER_CONTENT_MAP[triggerId];
+    const { name, locations } = POPUP_TRIGGER_CONTENT_MAP[triggerId];
 
     openPopup(name, locations);
   });
 });
 
 new Swiper(".mySwiper", {
+  modules: [EffectCoverflow],
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
