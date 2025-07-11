@@ -8,10 +8,11 @@ import "./styles/fonts.css";
 import "./styles/style.css";
 
 import { POPUP_TRIGGER_CONTENT_MAP } from "./constants";
-const documentBody = document.querySelector("body");
+import { isMobile } from "./helpers";
 
-// countdown timer start
+// === DOM Ready ===
 document.addEventListener("DOMContentLoaded", () => {
+  // Countdown Timer Setup
   const days = document.getElementById("days");
   const hours = document.getElementById("hours");
   const minutes = document.getElementById("minutes");
@@ -19,120 +20,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const targetDate = new Date("Aug 30, 2025 16:07:00");
 
-  function updateCountdown() {
-    const currentTime = new Date();
-    const diff = targetDate - currentTime;
+  const updateCountdown = () => {
+    const now = new Date();
+    const diff = targetDate - now;
 
     if (diff <= 0) {
       clearInterval(interval);
-      days.innerHTML = "00";
-      hours.innerHTML = "00";
-      minutes.innerHTML = "00";
-      seconds.innerHTML = "00";
+      [days, hours, minutes, seconds].forEach((el) => (el.innerHTML = "00"));
       return;
     }
 
-    const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-    const h = Math.floor(diff / 1000 / 60 / 60) % 24;
-    const m = Math.floor(diff / 1000 / 60) % 60;
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor(diff / (1000 * 60 * 60)) % 24;
+    const m = Math.floor(diff / (1000 * 60)) % 60;
     const s = Math.floor(diff / 1000) % 60;
 
-    days.innerHTML = d < 10 ? "0" + d : d;
-    hours.innerHTML = h < 10 ? "0" + h : h;
-    minutes.innerHTML = m < 10 ? "0" + m : m;
-    seconds.innerHTML = s < 10 ? "0" + s : s;
-  }
+    days.innerHTML = d.toString().padStart(2, "0");
+    hours.innerHTML = h.toString().padStart(2, "0");
+    minutes.innerHTML = m.toString().padStart(2, "0");
+    seconds.innerHTML = s.toString().padStart(2, "0");
+  };
 
-  updateCountdown();
-
+  updateCountdown(); // Initialize once immediately
   const interval = setInterval(updateCountdown, 1000);
-});
-// countdown timer end
 
-const tooltipTriggers = document.querySelectorAll(".tooltipTrigger");
-let popupCloseButton;
+  // Swiper Initialization
+  new Swiper(".mySwiper", {
+    modules: [EffectCoverflow],
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    initialSlide: isMobile() ? 0 : 3,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+  });
+});
+
+// === Popup Logic ===
+const documentBody = document.querySelector("body");
+let popupCloseButton = null;
 
 const closePopup = () => {
   const popup = document.querySelector(".popup-backdrop");
-  documentBody.classList.remove("scroll-lock"); // Prevent body scroll when popup is open
+  if (!popup) return;
 
-  popupCloseButton.removeEventListener("click", closePopup);
-
-  if (popup) {
-    popup.classList.remove("active");
-    popup.classList.add("hidden");
-  }
+  documentBody.classList.remove("scroll-lock");
+  popupCloseButton?.removeEventListener("click", closePopup);
+  popup.classList.remove("active");
+  popup.classList.add("hidden");
 };
 
 const openPopup = (title, locations) => {
   const popup = document.querySelector(".popup-backdrop");
+  const popupTitle = document.querySelector(".popup-title");
+  const popupList = document.querySelector(".popup-list");
 
-  if (popup) {
-    documentBody.classList.add("scroll-lock"); // Prevent body scroll when popup is open
-    const popupTitle = document.querySelector(".popup-title");
-    const popupList = document.querySelector(".popup-list");
-    popupList.innerHTML = ""; // Clear previous content
+  if (!popup || !popupTitle || !popupList) return;
 
-    locations.forEach((location) => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("popup-list-item");
+  documentBody.classList.add("scroll-lock");
+  popupList.innerHTML = "";
 
-      const listItemIconWrapper = document.createElement("a");
-      const listItemTextWrapper = document.createElement("div");
+  locations.forEach((location) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("popup-list-item");
 
-      listItemIconWrapper.classList.add("popup-list-item-icon-wrapper");
-      listItemIconWrapper.href = location.locationUrl;
-      listItemIconWrapper.target = "_blank"; // Open in new tab
-      listItemTextWrapper.classList.add("popup-list-item-text-wrapper");
+    const iconWrapper = document.createElement("a");
+    iconWrapper.classList.add("popup-list-item-icon-wrapper");
+    iconWrapper.href = location.locationUrl;
+    iconWrapper.target = "_blank";
 
-      const img = document.createElement("img");
-      const p = document.createElement("p");
+    const img = document.createElement("img");
+    img.src = location.imageSrc;
+    img.alt = location.name;
+    iconWrapper.appendChild(img);
 
-      img.src = location.imageSrc;
-      img.alt = location.name;
-      p.textContent = location.name;
+    const textWrapper = document.createElement("div");
+    textWrapper.classList.add("popup-list-item-text-wrapper");
 
-      listItemIconWrapper.appendChild(img);
-      listItemTextWrapper.appendChild(p);
+    const p = document.createElement("p");
+    p.textContent = location.name;
+    textWrapper.appendChild(p);
 
-      listItem.appendChild(listItemIconWrapper);
-      listItem.appendChild(listItemTextWrapper);
+    listItem.appendChild(iconWrapper);
+    listItem.appendChild(textWrapper);
+    popupList.appendChild(listItem);
+  });
 
-      popupList.appendChild(listItem);
-    });
-
-    popupCloseButton = document.querySelector(".popup-close-btn");
-
-    popupCloseButton.addEventListener("click", closePopup);
-    popupTitle.textContent = title;
-
-    popup.classList.remove("hidden");
-    popup.classList.add("active");
-  }
+  popupCloseButton = document.querySelector(".popup-close-btn");
+  popupCloseButton?.addEventListener("click", closePopup);
+  popupTitle.textContent = title;
+  popup.classList.remove("hidden");
+  popup.classList.add("active");
 };
 
-tooltipTriggers.forEach((trigger) => {
+document.querySelectorAll(".tooltipTrigger").forEach((trigger) => {
   trigger.addEventListener("click", () => {
-    const triggerId = trigger.id;
-
-    const { name, locations } = POPUP_TRIGGER_CONTENT_MAP[triggerId];
-
+    const { name, locations } = POPUP_TRIGGER_CONTENT_MAP[trigger.id];
     openPopup(name, locations);
   });
-});
-
-new Swiper(".mySwiper", {
-  modules: [EffectCoverflow],
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  initialSlide: 4,
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
 });
