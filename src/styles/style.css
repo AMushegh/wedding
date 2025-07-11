@@ -15,7 +15,7 @@ html {
   overflow: hidden;
 }
 .bg-parallax {
-  background-image: url("../assets/images/photo_2023-03-11_23-07-22.jpg");
+  background-image: url("../assets/images/parallax.jpg");
   height: 100%;
   background-position-y: -510px;
   background-repeat: no-repeat;
@@ -255,6 +255,7 @@ footer {
   background: rgba(0, 0, 0, 0.1);
 }
 .popup-backdrop {
+  z-index: 99999;
   position: fixed;
   top: 0;
   left: 0;
@@ -322,13 +323,14 @@ footer {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  z-index: 100;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 300px;
-  height: 300px;
+  height: 450px;
 }
 
 .swiper-slide img {

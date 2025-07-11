@@ -8,18 +8,18 @@ export const MONASTERY_DATA = {
       name: "Yandex Navi",
       locationUrl:
         "https://yandex.com/navi/org/the_church_of_st_gayane/225773844967?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
-      imageSrc: "./assets/images/yandex.png",
+      imageSrc: "./assets/images/mapIcons/yandex.png",
     },
     {
       name: "Google Maps",
       locationUrl: "https://maps.app.goo.gl/dWNByr5dafBhxdU1A",
-      imageSrc: "./assets/images/google-maps.png",
+      imageSrc: "./assets/images/mapIcons/google.png",
     },
     {
       locationUrl:
         "https://maps.apple.com/place?address=Isi%20Le%20Mulino%20street,%20Vagharshapat,%20Armenia&coordinate=40.157492,44.291787&name=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D4%B3%D5%A1%D5%B5%D5%A1%D5%B6%D5%A5%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB&place-id=I7D8B4792CC936DEA&map=explore",
       name: "Apple Maps",
-      imageSrc: "./assets/images/apple.png",
+      imageSrc: "./assets/images/mapIcons/apple.png",
     },
   ],
 };
@@ -31,18 +31,18 @@ export const RESTAURANT_DATA = {
       name: "Yandex Navi",
       locationUrl:
         "https://yandex.com/navi/org/florence/46488697731?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
-      imageSrc: "./assets/images/yandex.png",
+      imageSrc: "./assets/images/mapIcons/yandex.png",
     },
     {
       name: "Google Maps",
       locationUrl: "https://maps.app.goo.gl/b1sA225gxX42Z4rw9",
-      imageSrc: "./assets/images/google-maps.png",
+      imageSrc: "./assets/images/mapIcons/google.png",
     },
     {
       locationUrl:
         "https://maps.apple.com/place?address=Hrazdan%20Riverbank%20Road,%20Yerevan,%20Armenia&coordinate=40.194461,44.481560&name=Florence%20Restaurant&place-id=I6B3EDFF1C3EB6E6C&map=explore",
       name: "Apple Maps",
-      imageSrc: "./assets/images/apple.png",
+      imageSrc: "./assets/images/mapIcons/apple.png",
     },
   ],
 };
