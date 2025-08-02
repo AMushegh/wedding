@@ -3,6 +3,7 @@ const RESTAURANT_POPUP_TRIGGER_ID = "tooltipTrigger2";
 
 export const MONASTERY_DATA = {
   name: "Saint Gayane Church",
+  armName: "ՍՈՒՐԲ ԳԱՅԱՆԵ ԵԿԵՂԵՑԻ",
   locations: [
     {
       name: "Yandex Navi",
@@ -26,6 +27,7 @@ export const MONASTERY_DATA = {
 
 export const RESTAURANT_DATA = {
   name: "Florence Restaurant",
+  armName: "ՖԼՈՐԵՆՍ ՌԵՍՏՈՐԱՆ",
   locations: [
     {
       name: "Yandex Navi",

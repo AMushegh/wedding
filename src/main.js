@@ -76,6 +76,10 @@ const closePopup = () => {
   popup.classList.add("hidden");
 };
 
+const isArmVersion = () => {
+  return window.location.pathname.includes("hy");
+};
+
 const openPopup = (title, locations) => {
   const popup = document.querySelector(".popup-backdrop");
   const popupTitle = document.querySelector(".popup-title");
@@ -85,6 +89,8 @@ const openPopup = (title, locations) => {
 
   documentBody.classList.add("scroll-lock");
   popupList.innerHTML = "";
+
+  console.log(locations);
 
   locations.forEach((location) => {
     const listItem = document.createElement("li");
@@ -96,7 +102,7 @@ const openPopup = (title, locations) => {
     iconWrapper.target = "_blank";
 
     const img = document.createElement("img");
-    img.src = location.imageSrc;
+    img.src = `${isArmVersion() ? "." : ""}${location.imageSrc}`;
     img.alt = location.name;
     iconWrapper.appendChild(img);
 
@@ -121,7 +127,7 @@ const openPopup = (title, locations) => {
 
 document.querySelectorAll(".tooltipTrigger").forEach((trigger) => {
   trigger.addEventListener("click", () => {
-    const { name, locations } = POPUP_TRIGGER_CONTENT_MAP[trigger.id];
-    openPopup(name, locations);
+    const { name, armName, locations } = POPUP_TRIGGER_CONTENT_MAP[trigger.id];
+    openPopup(isArmVersion() ? armName : name, locations);
   });
 });
