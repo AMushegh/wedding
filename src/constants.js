@@ -26,23 +26,23 @@ export const MONASTERY_DATA = {
 };
 
 export const RESTAURANT_DATA = {
-  name: "Florence Restaurant",
-  armName: "ՖԼՈՐԵՆՍ ՌԵՍՏՈՐԱՆ",
+  name: "Voskevaz Winery Banquet Hall",
+  armName: "Voskevaz Winery Banquet Hall",
   locations: [
     {
       name: "Yandex Navi",
       locationUrl:
-        "https://yandex.com/navi/org/florence/46488697731?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
+        "https://yandex.com/navi/org/35700805837?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
       imageSrc: "./assets/images/mapIcons/yandex.png",
     },
     {
       name: "Google Maps",
-      locationUrl: "https://maps.app.goo.gl/b1sA225gxX42Z4rw9",
+      locationUrl: "https://maps.app.goo.gl/FJbeJbNVx8vSt2WY7",
       imageSrc: "./assets/images/mapIcons/google.png",
     },
     {
       locationUrl:
-        "https://maps.apple.com/place?address=Hrazdan%20Riverbank%20Road,%20Yerevan,%20Armenia&coordinate=40.194461,44.481560&name=Florence%20Restaurant&place-id=I6B3EDFF1C3EB6E6C&map=explore",
+        "https://maps.apple.com/place?address=Armenia&coordinate=40.269774,44.293864&name=Voskevaz%20Winery&place-id=IB8D9F7317C71012C&map=explore",
       name: "Apple Maps",
       imageSrc: "./assets/images/mapIcons/apple.png",
     },
