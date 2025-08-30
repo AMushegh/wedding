@@ -10,22 +10,23 @@ import "./styles/style.css";
 import { POPUP_TRIGGER_CONTENT_MAP } from "./constants";
 import { isMobile } from "./helpers";
 
-// === DOM Ready ===
-document.addEventListener("DOMContentLoaded", () => {
+const setupTimer = () => {
   // Countdown Timer Setup
   const days = document.getElementById("days");
   const hours = document.getElementById("hours");
   const minutes = document.getElementById("minutes");
   const seconds = document.getElementById("seconds");
 
-  const targetDate = new Date("Aug 30, 2025 00:18:00");
+  const targetDate = new Date("Aug 30, 2025 16:04:00");
 
   const updateCountdown = () => {
     const now = new Date();
     const diff = targetDate - now;
-
+    let interval;
     if (diff <= 0) {
-      clearInterval(interval);
+      if (interval) {
+        clearInterval(interval);
+      }
       [days, hours, minutes, seconds].forEach((el) => (el.innerHTML = "00"));
       return;
     }
@@ -43,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCountdown(); // Initialize once immediately
   const interval = setInterval(updateCountdown, 1000);
+};
+// === DOM Ready ===
+document.addEventListener("DOMContentLoaded", () => {
+  setupTimer();
 
   // Swiper Initialization
   new Swiper(".mySwiper", {
