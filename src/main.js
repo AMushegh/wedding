@@ -1,14 +1,7 @@
-import Swiper from "swiper";
-import { EffectCoverflow } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-
 import "./styles/fonts.css";
 import "./styles/style.css";
 
 import { POPUP_TRIGGER_CONTENT_MAP } from "./constants";
-import { isMobile } from "./helpers";
 
 const setupTimer = () => {
   // Countdown Timer Setup
@@ -17,7 +10,7 @@ const setupTimer = () => {
   const minutes = document.getElementById("minutes");
   const seconds = document.getElementById("seconds");
 
-  const targetDate = new Date("Aug 30, 2025 16:04:00");
+  const targetDate = new Date("Jun 28, 2026 15:30:00");
 
   const updateCountdown = () => {
     const now = new Date();
@@ -48,23 +41,6 @@ const setupTimer = () => {
 // === DOM Ready ===
 document.addEventListener("DOMContentLoaded", () => {
   setupTimer();
-
-  // Swiper Initialization
-  new Swiper(".mySwiper", {
-    modules: [EffectCoverflow],
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    initialSlide: isMobile() ? 0 : 3,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-  });
 });
 
 // === Popup Logic ===

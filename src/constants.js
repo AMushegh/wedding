@@ -2,8 +2,8 @@ const MONASTERY_POPUP_TRIGGER_ID = "tooltipTrigger1";
 const RESTAURANT_POPUP_TRIGGER_ID = "tooltipTrigger2";
 
 export const MONASTERY_DATA = {
-  name: "Saint Gayane Church",
-  armName: "ՍՈՒՐԲ ԳԱՅԱՆԵ ԵԿԵՂԵՑԻ",
+  name: "Saint Sargis Church",
+  armName: "ՍՈՒՐԲ ՍԱՐԳԻՍ ԵԿԵՂԵՑԻ",
   locations: [
     {
       name: "Yandex Navi",
@@ -26,8 +26,8 @@ export const MONASTERY_DATA = {
 };
 
 export const RESTAURANT_DATA = {
-  name: "Voskevaz Winery Banquet Hall",
-  armName: "Voskevaz Winery Banquet Hall",
+  name: "Palermo Hall",
+  armName: "Palermo Hall",
   locations: [
     {
       name: "Yandex Navi",
