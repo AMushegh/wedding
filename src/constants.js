@@ -8,17 +8,16 @@ export const MONASTERY_DATA = {
     {
       name: "Yandex Navi",
       locationUrl:
-        "https://yandex.com/navi/org/the_church_of_st_gayane/225773844967?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
+        "https://yandex.com/navi/org/surb_sargis_yekeghetsi/231672587701?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
       imageSrc: "./assets/images/mapIcons/yandex.png",
     },
     {
       name: "Google Maps",
-      locationUrl: "https://maps.app.goo.gl/dWNByr5dafBhxdU1A",
+      locationUrl: "https://maps.app.goo.gl/YvTnmuANfhmgh3zV6",
       imageSrc: "./assets/images/mapIcons/google.png",
     },
     {
-      locationUrl:
-        "https://maps.apple.com/place?address=Isi%20Le%20Mulino%20street,%20Vagharshapat,%20Armenia&coordinate=40.157492,44.291787&name=%D5%8D%D5%B8%D6%82%D6%80%D5%A2%20%D4%B3%D5%A1%D5%B5%D5%A1%D5%B6%D5%A5%20%D5%A5%D5%AF%D5%A5%D5%B2%D5%A5%D6%81%D5%AB&place-id=I7D8B4792CC936DEA&map=explore",
+      locationUrl: "https://maps.apple/p/3Y00D5upp3d_Mr",
       name: "Apple Maps",
       imageSrc: "./assets/images/mapIcons/apple.png",
     },
@@ -32,17 +31,16 @@ export const RESTAURANT_DATA = {
     {
       name: "Yandex Navi",
       locationUrl:
-        "https://yandex.com/navi/org/35700805837?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
+        "https://yandex.com/navi/org/palermo_holl/47026041904?si=thr8p7p3e7ktxj2x0yaaqhqw8c",
       imageSrc: "./assets/images/mapIcons/yandex.png",
     },
     {
       name: "Google Maps",
-      locationUrl: "https://maps.app.goo.gl/FJbeJbNVx8vSt2WY7",
+      locationUrl: "https://maps.app.goo.gl/vhZtZvAJ8LiHeY537",
       imageSrc: "./assets/images/mapIcons/google.png",
     },
     {
-      locationUrl:
-        "https://maps.apple.com/place?address=Armenia&coordinate=40.269774,44.293864&name=Voskevaz%20Winery&place-id=IB8D9F7317C71012C&map=explore",
+      locationUrl: "https://maps.apple/p/h5bhkWLHMITv0Y",
       name: "Apple Maps",
       imageSrc: "./assets/images/mapIcons/apple.png",
     },
